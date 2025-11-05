@@ -1,0 +1,2 @@
+ADMIN001,admin123,System Administrator,ADMIN
+S001,S001001,Adam Saleh,STUDENT,BBA

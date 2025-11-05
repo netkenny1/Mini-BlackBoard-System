@@ -1,0 +1,254 @@
+Exercise 1
+
+Imagine you're modeling a company's structure.
+Create two different packages:
+com.company.employees and com.company.management.
+
+In the employees package, define an Employee class.
+This class should have variables with different access levels:
+
+a public name
+
+a protected employee ID
+
+a default-access (package-private) salary
+
+a private performance review score
+
+In the management package, create a Manager class.
+From the main method in Manager, try to create an Employee object and access all of its variables.
+
+Question:
+Which variables were you able to access and which were you not able to access?
+Explain why you were able to access some and why you couldn’t access others.
+
+Exercise 2
+
+Create a BankAccount class that has private fields for
+accountHolderName and balance.
+
+Provide public getter methods for both properties and a public setter only for accountHolderName.
+The balance should only be changed through the public methods:
+
+deposit(double amount)
+
+withdraw(double amount)
+
+These methods must include validation logic such as:
+
+Ensuring the deposit amount is not negative
+
+Checking sufficient funds before withdrawal
+
+In the main method of a Main class:
+
+Create a new bank account object called savings.
+
+Call savings.deposit(500.0); to see a valid deposit.
+
+Call savings.withdraw(2000.0); to see an “insufficient funds” message.
+
+Try to set the balance directly using savings.balance = 5000.0;
+
+Question:
+This will cause a compiler error. Explain why this compilation error happens.
+
+Exercise 3
+
+Model a Car that has an Engine.
+Since an engine is a core part of a specific car, use a non-static inner class.
+
+The Car class should have a private String model.
+
+The inner Engine class should have a start() method that prints a message including the model of the car it belongs to, showing it can access the outer class's private members.
+
+In the main method in Dealership.java, do the following:
+
+Create a new object called familyCar.
+
+Call the startCar() method on your new object.
+
+Try to create an Engine by itself:
+
+Engine standaloneEngine = new Engine();
+
+
+This will fail.
+
+Question:
+Explain why this fails.
+
+Exercise 4
+
+Create a utility class named GeometryHelpers in a com.helpers package.
+This class should have a private constructor to prevent anyone from creating an object of it.
+
+Add two public static methods:
+
+circleArea(double radius) – calculates and returns the area of a circle using the formula A = πr²
+
+rectanglePerimeter(double length, double width) – calculates and returns the perimeter using the formula 2 × (length + width)
+
+In the main method of Main, do the following:
+
+Call the static methods with your own values.
+
+Run the code to see your new calculations printed. This demonstrates you can use the methods from anywhere without creating an object.
+
+Try to create an object with:
+
+GeometryHelpers helpers = new GeometryHelpers();
+
+
+When you compile, you’ll get an error.
+
+Question:
+Explain why this error happens.
+
+
+
+
+
+
+
+
+
+
+Java Exercises: Abstract Classes
+
+Exercise 1
+
+Imagine you're building a graphics application.
+You know you'll have many different shapes (circles, squares, etc.), but while they all have a name, the formula to calculate their area is unique to each shape.
+
+Create an abstract class named Shape. This class should have:
+
+A private String name.
+
+A constructor to initialize the name.
+
+A concrete public method getName() that returns the shape's name.
+
+An abstract method getArea() that takes no arguments and returns a double.
+
+Next, create a concrete class Circle that extends Shape.
+It should have a private radius property and implement the getArea() method using the formula (π * radius²).
+
+Finally, in a Main class, create an instance of Circle and print its name and area.
+
+Exercise 2
+
+You are designing an HR system.
+All employees share common attributes like a name and an ID. However, the company has different types of employees, and the logic for calculating their monthly pay differs.
+
+Create an abstract class Employee with:
+
+String name and int employeeId properties.
+
+A constructor that initializes these properties.
+
+An abstract method calculatePay() which returns a double.
+
+Then, create two concrete classes that extend Employee:
+
+SalariedEmployee:
+
+Has an additional double monthlySalary property.
+
+Its constructor should initialize all properties.
+
+Implements calculatePay() to simply return the monthly salary.
+
+HourlyEmployee:
+
+Has double hoursWorked and double hourlyRate properties.
+
+Its constructor should initialize all properties.
+
+Implements calculatePay() to return hoursWorked * hourlyRate.
+
+Finally, in a Main class, create instances of both a SalariedEmployee and an HourlyEmployee and print out their calculated pay.
+
+Exercise 3
+
+You’re building a data-access layer for an application.
+Your application needs to connect to different types of databases (like MySQL, PostgreSQL, etc.).
+The specific steps to establish a connection are different for each database, but the action of closing the connection is always the same and should never be altered.
+
+Create an abstract class DatabaseConnector with:
+
+An abstract method connect().
+
+A final method closeConnection() that prints "Connection closed."
+
+Create two concrete classes that extend DatabaseConnector:
+
+MySQLConnector: implements connect() to print "Connecting to MySQL database..."
+
+PostgreSQLConnector: implements connect() to print "Connecting to PostgreSQL database..."
+
+In a Main class, create instances of both MySQLConnector and PostgreSQLConnector.
+Call both connect() and closeConnection() on each object.
+
+Exercise 4
+
+Let’s model a generic music player.
+All audio devices can play, stop, and show their status.
+Playing and stopping are fundamental actions, but the way they are implemented might differ.
+Displaying the device status, however, is a common feature we can define once.
+
+Create an abstract class AudioPlayer with:
+
+A private boolean isPlaying (defaulted to false).
+
+An abstract method play().
+
+An abstract method stop().
+
+A concrete method displayStatus() that prints "Status: Playing" or "Status: Stopped" based on isPlaying.
+
+A protected setter method setPlaying(boolean status) so subclasses can update the status.
+
+Next, create three concrete classes that extend AudioPlayer:
+
+StreamingPlayer: implement play() to print "Connecting to server..." and stop() to print "Connection closed."
+
+LocalFilePlayer: implement play() to print "Reading file from disk..." and stop() to print "Stopped playback."
+
+PodcastPlayer: implement play() to print "Buffering podcast episode..." and stop() to print "Paused podcast."
+
+In your Main class, create one object of each (StreamingPlayer, LocalFilePlayer, and PodcastPlayer).
+For each, call play(), displayStatus(), stop(), and displayStatus() to demonstrate the change in state.
+
+Exercise 5
+
+You are creating a framework where users must submit data.
+You need different validators for different data types.
+Every validator must have a method to check if the input is valid.
+
+Create an abstract class InputValidator with:
+
+A private String input.
+
+A constructor to set the input.
+
+An abstract method isValid() that returns a boolean.
+
+A concrete getInput() method.
+
+Create three concrete subclasses:
+
+EmailValidator: a valid email must contain both "@" and ".".
+
+PhoneNumberValidator: a valid phone number must be exactly 10 digits.
+
+PasswordValidator: a valid password must be at least 8 characters long.
+
+In your Main class, create instances of each validator for both valid and invalid inputs.
+For each instance, print the input and the result of isValid().
+
+Use the following code for validation:
+
+email != null && email.contains("@") && email.contains(".");
+phone != null && phone.matches("\\d{10}");
+password != null && password.length() >= 8;

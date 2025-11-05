@@ -1,0 +1,5 @@
+---
+description: For coding java
+alwaysApply: false
+---
+When writing code, always make sure to use the same syntax coding level as the Java_Code_Syntax.txt file inluded in the folder. Do not use extra or more advanced syntax, or things we have not covered yet.

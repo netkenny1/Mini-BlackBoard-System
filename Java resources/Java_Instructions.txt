@@ -1,0 +1,127 @@
+Java Individual Project: Console-Based Mini Blackboard System
+
+Submission Deadline: November 2, 2025, at 23:59
+
+1. Project Description
+
+For your individual project, you will build a console-based Mini Blackboard System, a simplified version of Blackboard (a learning management system).
+This application will manage the relationships between students, teachers, and courses.
+
+Imagine you are a software developer building the core engine for this new LMS.
+When the project is complete, the system will support a full academic workflow through a text-based interface.
+
+Example scenario:
+
+An administrator logs in to create a new “Java Programming” course and a teacher account for Dr. Smith.
+
+The administrator assigns Dr. Smith to the course and enrolls a student, Jane Doe.
+
+Dr. Smith logs in, views her assigned course, and creates a “Homework 1” assignment.
+
+Jane Doe logs in, views her course and assignment, and later checks her grade after Dr. Smith has graded it.
+
+The primary goal of this project is to apply Object-Oriented Programming (OOP) principles — including Inheritance, Encapsulation, Abstraction, and Polymorphism — to design and implement a functional, well-structured system.
+
+The entire application must run in the console, focusing on logic and design (no GUI).
+
+2. Core System Features (MUST-HAVE)
+
+Your application must successfully implement all of the following features.
+All data must be saved to local files (e.g., .txt or .csv) when the application closes and reloaded when it starts, so that information persists between sessions.
+
+General Features
+
+Data Persistence:
+The system must load its state from files on startup and save it to files on exit.
+
+Login Mechanism:
+The system must allow users to log in using credentials (e.g., user ID and password) and load the correct menu for their role.
+
+Administrator Features
+
+Create, update, and delete Student accounts (including user ID and password).
+
+Create, update, and delete Teacher accounts (including login credentials).
+
+Create and define new Courses.
+
+Assign a Teacher to a specific course.
+
+Enroll a Student in a specific course.
+
+Teacher Features
+
+View a list of all courses assigned to them.
+
+View the list of students enrolled in each course.
+
+Create new Assignments for a course.
+
+Enter and update Grades for each student on a specific assignment.
+
+Student Features
+
+View the list of courses they are enrolled in.
+
+For each course, view all assignments and their grades.
+
+View their final calculated grade for each course.
+
+3. Extending Functionality
+
+You are encouraged to extend your system’s functionality beyond the core requirements.
+Here are some suggested enhancements:
+
+Course Capacity:
+Add a maxCapacity to each course and prevent enrollment when full.
+
+Prerequisites:
+Allow courses to specify prerequisite courses.
+Prevent a student from enrolling until prerequisites are passed.
+
+Report Generation:
+Enable administrators to generate .txt report files, such as:
+
+Full student transcript
+
+Class roster with grades
+
+Announcements:
+Allow teachers to post announcements for a course, which students can view.
+
+4. Submission & Evaluation
+
+Your final submission must be uploaded to Blackboard as a .zip file containing source code and documentation.
+
+Submission Package
+
+Source Code:
+All .java files organized into logical packages.
+
+README File:
+Must include any information needed to run your project (e.g., admin credentials).
+
+Design Document:
+This is crucial for explaining your architecture and reasoning. It must include:
+
+A UML Class Diagram showing the relationships between classes.
+
+A detailed explanation of your design choices, including:
+
+Why your classes are structured as they are.
+
+Why you chose specific data structures.
+
+How your file persistence system works.
+
+Evaluation Criteria
+
+Your grade will be based on:
+
+Quality of OOP design.
+
+Code readability and maintainability.
+
+Ability to clearly explain your design decisions during a one-on-one code review.
+
+During this review, you must demonstrate a clear understanding of your code and the principles you applied.
