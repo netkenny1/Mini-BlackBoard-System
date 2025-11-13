@@ -2,7 +2,9 @@ package com.blackboard;
 
 import com.blackboard.models.*;
 import com.blackboard.services.*;
-import com.blackboard.views.*;
+import com.blackboard.views.AdminMenu;
+import com.blackboard.views.StudentMenu;
+import com.blackboard.views.TeacherMenu;
 import java.util.Scanner;
 
 public class Main {
